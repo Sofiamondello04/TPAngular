@@ -1,21 +1,21 @@
 <table class="table">
     <thead>
-        <tr>
-            <th>Imagen</th>
+        <tr>  
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>   
+            <th>Imagen</th>
         </tr>
     </thead>
     <tbody>
         
-        <tr *ngFor="let fila of products"> 
+        <tr *ngFor='let fila of products'> 
             <td>{{fila.name}}</td>
-            <td><img [src]="fila.image" [alt]="fila.name"></td>
             <td>{{fila.type}}</td>
             <td>{{fila.price}}</td>
-            <td>{{fila.stock}}</td>    
+            <td>{{fila.stock}}</td>  
+            <td><img [src]="fila.image" [alt]="fila.name"></td>  
         </tr>
         
     </tbody>
