@@ -5,18 +5,22 @@
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>   
+            <th>Sale</th>
             <th>Imagen</th>
         </tr>
     </thead>
     <tbody>
         
-        <tr *ngFor='let fila of products'> 
+        <tr *ngFor="let fila of products" [ngClass]="{'clearance': fila.clearance}"> 
             <td>{{fila.name}}</td>
             <td>{{fila.type}}</td>
-            <td>{{fila.price}}</td>
-            <td>{{fila.stock}}</td>  
+            <td>{{fila.price | currency }}</td>
+            <td><span class="badge text-bg-warning" *ngIf="fila.stock==0">Sin Stock</span></td>      
             <td><img [src]="fila.image" [alt]="fila.name"></td>  
+            <td>{{fila.clearance}}</td>
         </tr>
+
+        
         
     </tbody>
 </table>
