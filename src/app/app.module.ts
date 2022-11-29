@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { PototitoAboutComponent } from './pototito-about/pototito-about.component';
 import { PototitoProductsComponent } from './pototito-products/pototito-products.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PototitoProductsComponent } from './pototito-products/pototito-products
     
     CartComponent,
           PototitoAboutComponent,
-          PototitoProductsComponent
+          PototitoProductsComponent,
+          InputIntegerComponent
   ],
   imports: [
     BrowserModule,
