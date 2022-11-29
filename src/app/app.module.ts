@@ -7,13 +7,17 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
 
 import { CartComponent } from './cart/cart.component';
+import { PototitoAboutComponent } from './pototito-about/pototito-about.component';
+import { PototitoProductsComponent } from './pototito-products/pototito-products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     
-    CartComponent
+    CartComponent,
+          PototitoAboutComponent,
+          PototitoProductsComponent
   ],
   imports: [
     BrowserModule,
