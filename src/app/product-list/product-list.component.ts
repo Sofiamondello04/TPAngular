@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
       name: 'Baba mom',
       type: 'Babero',
       price: 200,
-      stock: 10,
+      stock: 2,
       clearance: false,
       quantity: 0,
       
@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
       name: 'Recibiendo',
       type: 'Ajuar',
       price: 790,
-      stock: 0,
+      stock: 3,
       clearance: true, 
       quantity: 0,
       
@@ -37,8 +37,8 @@ export class ProductListComponent implements OnInit {
       name: 'Glamm',
       type: 'Body',
       price: 630,
-      stock: 0, 
-      clearance: true,
+      stock: 1, 
+      clearance: false,
       quantity: 0,
       
     }];
