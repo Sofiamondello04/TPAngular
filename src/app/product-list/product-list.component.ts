@@ -12,37 +12,7 @@ import {Product} from './Product';
 export class ProductListComponent implements OnInit {
 
 
-   products: Product [] = [
-    { 
-      image: 'assets/img/Baberos.png',
-      name: 'Baba mom',
-      type: 'Babero',
-      price: 200,
-      stock: 2,
-      clearance: false,
-      quantity: 0,
-      
-    },
-    {
-      image: 'assets/img/Ajuar.png',
-      name: 'Recibiendo',
-      type: 'Ajuar',
-      price: 790,
-      stock: 3,
-      clearance: true, 
-      quantity: 0,
-      
-    },
-    {
-      image: 'assets/img/Body.png',
-      name: 'Glamm',
-      type: 'Body',
-      price: 630,
-      stock: 1, 
-      clearance: false,
-      quantity: 0,
-      
-    }];
+   products: Product [] = [];
  
 
   constructor(
@@ -52,6 +22,9 @@ export class ProductListComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    //ciclo de vida en el cual ANgular levanta el componente y lo muestra en el browser
+    this.productDataService.getAll()
+    .subscribe(products=>this.products=products);
   }
 
   addToCart(product: Product): void {
