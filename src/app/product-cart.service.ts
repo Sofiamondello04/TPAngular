@@ -9,8 +9,14 @@ export class ProductCartService {
   cartList: Product[]= [];
 
   addToCart(product: Product) {
-    this.cartList.push(product);
-    
+    let item = this.cartList.find((v1) =>v1.name==product.name);
+    if (!item) {
+      this.cartList.push({...product});
+    }
+    else {
+      item.quantity+= product.quantity;
+    }
+    console.log(this.cartList);
   }
 
 
