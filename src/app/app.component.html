@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/about']">Contacto</a>
+          <a class="nav-link" [routerLink]="['/about']">About</a>
         </li>
         
       </ul>
@@ -20,9 +20,15 @@
 
 <div class="container">
   <router-outlet></router-outlet>
-  </div>
+</div>
   
 
 <footer class="text-center bg-dark">
-  <span class="text-light">{{title}} 2022</span>
+  <div>
+    <span class="text-light">{{title}} © 2022</span>
+    <a href="https://www.instagram.com/pototito_bebes/" target="_blank"><img width= "25
+      px" src="https://github.com/Sofiamondello04/ImagenesPototito/blob/main/logoinstagram.png?raw=true" alt="Logo Instagram"></a>
+    <a href="https://api.whatsapp.com/send?phone=542284630984&app=facebook&entry_point=page_cta&fbclid=IwAR0ScCdh-0xnkj29oeDReNrqYWamrhxZG434Laflr1R1l7akTYCsHo-lPtU" target="_blank"><img src="https://github.com/Sofiamondello04/ImagenesPototito/blob/main/logowhatsapp.png?raw=true" alt="Logo Whatsapp"></a>
+   
+</div>
 </footer>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductCartService } from '../product-cart.service';
 import { ProductDataService } from '../product-data.service';
-import {Product} from './Product';
+import {Product} from './Product-interface';
 
 
 @Component({
@@ -28,9 +28,29 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(product: Product): void {
-    this.cart.addToCart(product);
-    product.stock-= product.quantity;
-    product.quantity=0;
+    if (product.quantity> product.stock) {
+      product.quantity=0;
+      return alert("La cantidad ingresada supera el stock disponible");
+      
+    }
+    else if (product.quantity<=0){
+      product.quantity=0;
+      return alert("La cantidad ingresada debe ser mayor a cero");
+
+    }
+    else {
+       if (product.quantity==null)
+       {
+        product.quantity=0;
+        return
+       }
+        this.cart.addToCart(product);
+        product.stock-= product.quantity;
+        product.quantity=0;
+      
+    }
+    
+   
   }
 
   maxReached(m: string) {

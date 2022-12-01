@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Product } from '../product-list/Product';
+import { Product } from '../product-list/Product-interface';
 
 @Component({
   selector: 'app-input-integer',
@@ -26,7 +26,7 @@ export class InputIntegerComponent implements OnInit {
   }
 
   upQuantity(): void {
-    if(this.quantity< this.max) {
+    if(this.quantity< this.max){
       this.quantity++;
       this.quantityChange.emit(this.quantity);
     }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Product } from './product-list/Product';
+import { Product } from './product-list/Product-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class ProductCartService {
     else {
       item.quantity+= product.quantity;
     }
-    console.log(this.cartList);
+   
     this.cartList.next(this._cartList);
   }
 

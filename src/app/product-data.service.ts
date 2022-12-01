@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { tap } from 'rxjs/operators';
-import { Product } from './product-list/Product';
+import { Product } from './product-list/Product-interface';
 
 const URL= 'https://6387cbe2d94a7e50408db836.mockapi.io/api/products';
 

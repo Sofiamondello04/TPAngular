@@ -6,5 +6,6 @@ export interface Product {
     stock: number;
     clearance: boolean,
     quantity: number,
+  
 }
 
