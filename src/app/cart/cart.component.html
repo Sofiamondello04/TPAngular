@@ -1,8 +1,22 @@
-<h3>Arma tu carrito</h3>
+
 <div>
-    <ul>
-        <li *ngFor="let p of (cartList$ | async)">
-            {{p.name}}: {{p.quantity}}
-        </li>
-    </ul>
+    <div>
+     <img src="https://github.com/Sofiamondello04/ImagenesPototito/blob/main/Modelito.PNG?raw=true">
+    </div>
+
+    <div class="list">
+        <h4>Arma tu lista de deseos</h4>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let p of (cartList$ | async)">
+                    {{p.name}}: {{p.quantity}}
+                 <span>   <button class="btn btn-dark btn-sm" (click)="delete(p)">Quitar</button></span>
+                </li>
+                
+        </ul>
+            
+      
+   
+    </div>
+
 </div>
+

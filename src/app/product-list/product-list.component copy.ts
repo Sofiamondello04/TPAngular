@@ -13,7 +13,6 @@ export class ProductListComponent implements OnInit {
 
 
    products: Product [] = [];
-   carts : Product [] = [];
  
 
   constructor(
@@ -26,7 +25,7 @@ export class ProductListComponent implements OnInit {
     //ciclo de vida en el cual ANgular levanta el componente y lo muestra en el browser
     this.productDataService.getAll()
     .subscribe(products=>this.products=products);
-    this.cart.cartList.subscribe((c)=>this.carts=c);
+    
     
   }
 
@@ -48,26 +47,17 @@ export class ProductListComponent implements OnInit {
         return
        }
         this.cart.addToCart(product);
-       // product.stock-= product.quantity;
+        product.stock-= product.quantity;
         product.quantity=0;
       
     }
     
-    
    
   }
 
-  saldoStock(product: Product) {
-    let item= this.carts.find((c)=>c.name===product.name);
-    if(!item) {
-     
-      return product.stock;
-    }
-    else {
-      
-      return product.stock-item.quantity;
-    }
-  }
+
+
+
 
   maxReached(m: string) {
     alert(m);

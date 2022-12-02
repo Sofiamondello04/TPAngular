@@ -3,28 +3,26 @@
         <tr>  
             <th>Imagen</th>
             <th>Nombre</th>
-            <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>   
             <th>Cantidad</th>  
-            <th>Compra</th>
+            <th>Accion</th>
             
         </tr>
     </thead>
     <tbody>
         
-        <tr *ngFor="let product of products" [ngClass]="{'clearance': product.clearance}"> 
+        <tr *ngFor="let product of products"> 
             <td><img width="100" class="img-thumbnail"[src]="product.image" [alt]="product.name"></td>  
             <td>{{product.name}}</td>
-            <td>{{product.type}}</td>
             <td>{{product.price | currency }}</td>
-            <td><span class="badge text-bg-warning" *ngIf="product.stock==0; else elseBlock">SIN STOCK</span>
-                <ng-template #elseBlock>{{product.stock}}</ng-template></td>        
+            <td><span class="badge text-bg-warning" *ngIf="saldoStock(product)==0; else elseBlock">SIN STOCK</span>
+                <ng-template #elseBlock>{{saldoStock(product)}}</ng-template></td>        
             <td>
-              <app-input-integer [(quantity)]="product.quantity" [max]="product.stock" *ngIf="product.stock" (maxReached)="maxReached($event)"></app-input-integer>
+              <app-input-integer [(quantity)]="product.quantity" [max]="saldoStock(product)" *ngIf="saldoStock(product)>0" (maxReached)="maxReached($event)"></app-input-integer>
             </td>
               <td>
-                <button class="btn btn-primary" (click)="addToCart(product)">Accion</button>
+                <button class="btn btn-secondary btn-sm" (click)="addToCart(product)" *ngIf="saldoStock(product)>0">Agregar item</button>
             </td>
             
            

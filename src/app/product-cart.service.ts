@@ -22,6 +22,14 @@ export class ProductCartService {
     this.cartList.next(this._cartList);
   }
 
+  delete(product: Product){
+
+    let item = this._cartList.find((v1) =>v1.name==product.name);
+    this._cartList= this._cartList.filter((v1)=>v1.name!=product.name);
+    //this._cartList.pop();
+    this.cartList.next(this._cartList);//aviso al suscriptor
+  }
+
 
   constructor() { }
 }
